@@ -96,7 +96,7 @@ const UpsertTransactionDialog = ({
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      await upsertTransaction({...data, id: transactionId});
+      await upsertTransaction({ ...data, id: transactionId });
       setIsOpen(false);
       form.reset();
     } catch (error) {
@@ -104,7 +104,7 @@ const UpsertTransactionDialog = ({
     }
   };
 
-  const isUpdate = Boolean(transactionId)
+  const isUpdate = Boolean(transactionId);
 
   return (
     <Dialog
@@ -119,7 +119,9 @@ const UpsertTransactionDialog = ({
       <DialogTrigger asChild></DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{isUpdate ? 'Atualizar' : 'Criar'} transação</DialogTitle>
+          <DialogTitle>
+            {isUpdate ? "Atualizar" : "Criar"} transação
+          </DialogTitle>
           <DialogDescription>Insira as informações abaixo</DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -259,7 +261,9 @@ const UpsertTransactionDialog = ({
                   Cancelar
                 </Button>
               </DialogClose>
-              <Button type="submit">{isUpdate ? 'Atualizar' : 'Adicionar'}</Button>
+              <Button type="submit">
+                {isUpdate ? "Atualizar" : "Adicionar"}
+              </Button>
             </DialogFooter>
           </form>
         </Form>
